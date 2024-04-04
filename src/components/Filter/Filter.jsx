@@ -5,6 +5,7 @@ export const Filter = () => {
   const thirdOtherContext = useContext(tasksContext)
   const ResultFilter = thirdOtherContext.Tasks.filter(task=>task.state)
   const ResultFilte2 = thirdOtherContext.Tasks.filter(task=>!task.state)
+  
   const handleFilter=(event)=>{
     const eventeFilter=event.target.value
     thirdOtherContext.Tasks.filter(task=>{
