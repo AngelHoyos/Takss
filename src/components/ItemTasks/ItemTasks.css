@@ -1,0 +1,42 @@
+.liActive{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    border: 1px red solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.liSecondActive{
+    border: 1px green solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    text-decoration: line-through;
+}
+.pointActive{
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left:  50px;
+}
+.point{
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left:  50px;
+
+}
+#CheckoBOx{
+    margin-right:  50px;
+}
+.title{
+    margin:0  162px 0 0;
+}

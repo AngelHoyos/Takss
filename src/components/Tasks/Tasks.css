@@ -1,0 +1,19 @@
+.Nav{
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.Nav > ul{
+    display: flex;
+    flex-direction: column;
+}
+.GeneralTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.GeneralTitle > p{
+    margin: 0 15% ;
+    font-size: 1.5rem;
+}
