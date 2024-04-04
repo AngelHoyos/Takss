@@ -1,21 +1,20 @@
-import React, { useContext,useState } from 'react'
+import React, { useContext } from 'react'
 import './Filter.css'
 import { tasksContext } from '../Context/Context'
 export const Filter = () => {
   const thirdOtherContext = useContext(tasksContext)
   const ResultFilter = thirdOtherContext.Tasks.filter(task=>task.state)
   const ResultFilte2 = thirdOtherContext.Tasks.filter(task=>!task.state)
-  const [CopieTasks, setCopieTasks] = useState([])
   const handleFilter=(event)=>{
     const eventeFilter=event.target.value
-    thirdOtherContext.Tasks.filter(CopieTasks=>{
+    thirdOtherContext.Tasks.filter(task=>{
       if (eventeFilter==="earrings") {
         ResultFilte2
-        
+        thirdOtherContext.setTasks(ResultFilte2)
 
       } else if(eventeFilter==="resolved") {
         ResultFilter
-        setCopieTasks(ResultFilter)
+        thirdOtherContext.setTasks(ResultFilter)
 
       }else{
         thirdOtherContext.Tasks
