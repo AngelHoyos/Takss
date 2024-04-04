@@ -3,20 +3,15 @@ import LogoReact from '../../../assets/react.svg'
 import './Header.css'
 import { tasksContext } from '../../Context/Context'
 import  { v4 as uuid } from 'uuid';
-import { ItemTasks } from '../../ItemTasks/ItemTasks';
 
 export const Header = () => {
-    const [PedingTaks, setPedingTaks] = useState(0)
-    const [CountTaks, setCountTaks] = useState(0)
-
+    
     const unique_id = uuid();
-const context=useContext(tasksContext)
-const [titleTask, setTitleTask] = useState('')
-const [descriptionTask, setDescriptionTask] = useState('')
-useEffect(() => {
-    const pendingCount = context.Tasks.length
-    setPedingTaks(pendingCount);
-});
+    const context=useContext(tasksContext)
+    const [titleTask, setTitleTask] = useState('')
+    const [descriptionTask, setDescriptionTask] = useState('')
+    const CountTaks=context.Tasks.filter(taks=>taks.state)
+    const PedingTaks=context.Tasks.filter(taks=>!taks.state)
 
 const handleCreateTasks=()=>{
     const newTask={
@@ -28,7 +23,6 @@ const handleCreateTasks=()=>{
     let listTask = [...context.Tasks, newTask]
     context.setTasks(listTask)
     console.log(listTask);
-    
 
 }
 
@@ -52,8 +46,8 @@ const handleCreateTasks=()=>{
         <button type="submit" onClick={handleCreateTasks} >Crear</button>
         </section>
         <p className="TaskControl">
-            Usted tiene <span id='CompleteTaks'>{CountTaks}</span> tareas completadas 
-            y <span>{PedingTaks}</span> tareas pendientes
+            Usted tiene <span id='CompleteTaks'>{CountTaks.length}</span> tareas completadas 
+            y <span>{PedingTaks.length}</span> tareas pendientes
         </p>
         <hr />
     </header>
